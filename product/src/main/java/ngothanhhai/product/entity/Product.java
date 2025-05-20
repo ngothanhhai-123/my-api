@@ -1,0 +1,58 @@
+package ngothanhhai.product.entity;
+
+import jakarta.persistence.*;
+
+// Đánh dấu đây là một Entity, sẽ ánh xạ với một bảng trong cơ sở dữ liệu
+@Entity//danh dau class la 1 table
+@Table(name = "product")// Ánh xạ đến bảng "product" trong cơ sở dữ liệu
+public class Product {
+    //Đánh dấu trường id là khóa chính của bảng
+    @Id//dinh nghia cho id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//so tu dong tang
+    //@GeneratedValue(strategy = GenerationType.UUID)
+    // UUID sẽ đảm bảo mỗi id là duy nhất, ví dụ như "31khrbui1*(&"
+    private Long id;
+    private String name ;
+    private String description;
+    private Double price;
+    private Integer stock;
+    //genarate -> getter and setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+}
